@@ -1,0 +1,21 @@
+SIZE = 45
+Length = 7
+import random
+
+def name_generator(length):
+    name = []
+    for i in length :
+        if(i%2 == 0):
+            name.append(chr(random.randint(97,123)))
+        else :
+            name.append(chr(random.randint(65,91)))
+    name = name +".py"
+    return name
+
+def chaos(copyfilename):
+    for i in SIZE:
+        fc = open(copyfilename,'r')
+        file = open(name_generator(Length),'w')
+        file.write(fc.read())
+        fc.close()
+        file.close()
